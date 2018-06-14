@@ -1,0 +1,72 @@
+Machine Learning => Math + Programming
+
+Math
+- Stats
+- Algebra
+- Calculus
+- Probability
+- Matrix
+- Dist Formula
+
+Programming
+- Python
+- R
+- Scala
+- Matlab
+Big data
+
+Data Scientist
+- Data Collection - web crawling
+- Data Analysis
+  - Data Cleaning
+  - Exploratory Data Analysis
+  - Statistical Analysis
+- Data Visualization
+  - graphs - pie/bar/hist/scatter
+- Data Preprocessing
+  - Label Encoding
+  - Feature Scaling
+  - Handle Missing Data
+  - Train Test Split
+- Machine Learning
+
+- Deep Learning
+  - Artificial Neural Networks
+
+
+Anaconda
+Data Collection 	- Beautiful Soup / Scrappy
+Data Analysis 		- Numpy => Pandas 
+Data Visualization 	- Matplotlib + Seaborn
+Machine Learning 	- sklearn(scikit learn)
+
+Deep Learning		- Tensorflow + Keras + PyTorch
+
+
+Machine Learning
+- Regression - House Price
+- Classification 
+ - Opencv - Object Detection + Face detection/recognition
+ - NLP - Natural Language Processing
+   - Text Classification
+   	- Sentiment Analysis
+	- Spam Classification
+	- Topic Modelling
+   - Text Summarizer
+ - Diabetes Classification
+ - Recommendation
+Deep Learning
+- Dog Cat Classification
+- Recommendation
+- Object Detection
+ 
+
+
+
+
+
+
+
+
+
+
