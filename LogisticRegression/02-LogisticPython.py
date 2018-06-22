@@ -25,16 +25,39 @@ def min_max(dataset):
         minmax.append([min_value, max_value])
         
     return minmax
-        
 
-def normalization():
-    pass
+def normalization(minmax,dataset):
+    numer = 0
+    denom = 0
+    
+    for row in dataset:
+        for col in range(len(row)):
+            numer = row[col] - minmax[col][0]
+            denom = minmax[col][1] - minmax[col][0]
+            row[col] = numer / denom
 
-def cross_validation():
-    pass
 
-def accuracy_metrics():
-    pass
+def cross_validation(dataset, n_folds):
+    dataset_copy = dataset.copy()
+    fold_size = int(len(dataset) / n_folds)
+    folds = []
+    
+    for i in range(n_folds):
+        fold = []
+        while len(fold) <= fold_size:
+            index = random.randrange(len(dataset_copy))
+            fold.append(dataset_copy.pop(index))
+            
+        folds.append(fold)
+    return folds
+
+def accuracy_metrics(actual,predicted):
+    correct = 0
+    for i in range(len(actual)):
+        if actual[i] == predicted[i]:
+            correct += 1
+    
+    return correct / len(actual) * 100
 
 def predictions(row,coef):
     ypred = coef[0]
@@ -45,8 +68,18 @@ def predictions(row,coef):
 def evaluate_algorithm():
     pass
 
-def sgd_logistic():
-    pass
+def sgd_logistic(dataset, learning_rate, nb_epochs):
+    b = [0] * len(dataset[0])
+    
+    for i in range(nb_epochs):
+        for row in dataset:
+            yhat = predictions(row, b)
+            error = row[-1] - yhat
+            b[0] = b[0] + learning_rate * error * yhat * (1 - yhat)
+            
+            for j in range(len(row)):
+                b[j+1] = b[j+1] + learning_rate * error * yhat * (1 - yhat) * row[j]
+        
 
 def logistic_regression():
     pass
@@ -55,6 +88,7 @@ filename = 'pima-indians-diabetes.data.csv'
 dataset = read_csv(filename)
 str_to_float(dataset)
 minmax = min_max(dataset)
+normalization(minmax, dataset)
 
 
 
