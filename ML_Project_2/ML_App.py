@@ -1,0 +1,136 @@
+from PyQt5 import QtCore, QtGui, QtWidgets
+
+class Ui_MainWindow(QtWidgets.QMainWindow):
+    def setupUi(self, MainWindow):
+        MainWindow.setObjectName("MainWindow")
+        MainWindow.resize(1279, 826)
+        self.centralwidget = QtWidgets.QWidget(MainWindow)
+        self.centralwidget.setObjectName("centralwidget")
+        self.label = QtWidgets.QLabel(self.centralwidget)
+        self.label.setGeometry(QtCore.QRect(260, 50, 801, 121))
+        self.label.setStyleSheet("font: 20pt \"MS Shell Dlg 2\";\n"
+"color: rgb(170, 0, 0);")
+        self.label.setObjectName("label")
+
+        self.imageLabel = QtWidgets.QLabel(self.centralwidget)
+        self.imageLabel.setGeometry(QtCore.QRect(150,200,1000,500))
+        self.mainImage = QtGui.QPixmap('image_1.jpg')
+        self.imageLabel.setPixmap(self.mainImage)
+
+        self.frame = QtWidgets.QFrame(self.centralwidget)
+        self.frame.setGeometry(QtCore.QRect(0, 0, 1281, 791))
+        self.frame.setStyleSheet("background-color: rgb(255, 255, 255);")
+        self.frame.setFrameShape(QtWidgets.QFrame.StyledPanel)
+        self.frame.setFrameShadow(QtWidgets.QFrame.Raised)
+        self.frame.setObjectName("frame")
+        self.pushButton = QtWidgets.QPushButton(self.frame)
+        self.pushButton.setGeometry(QtCore.QRect(400, 50, 431, 91))
+        self.pushButton.setStyleSheet("font: 20pt \"MS Shell Dlg 2\";")
+        self.pushButton.setObjectName("pushButton")
+        self.label_2 = QtWidgets.QLabel(self.frame)
+        self.label_2.setGeometry(QtCore.QRect(80, 200, 501, 401))
+        self.label_2.setText("")
+        self.label_2.setObjectName("label_2")
+        self.label_2.setStyleSheet("border : 2px solid red")
+        self.label_3 = QtWidgets.QLabel(self.frame)
+        self.label_3.setGeometry(QtCore.QRect(670, 190, 541, 411))
+        self.label_3.setObjectName("label_3")
+        self.label_3.setStyleSheet("border : 2px solid red")
+        self.pushButton_2 = QtWidgets.QPushButton(self.frame)
+        self.pushButton_2.setGeometry(QtCore.QRect(430, 660, 431, 91))
+        self.pushButton_2.setStyleSheet("font: 20pt \"MS Shell Dlg 2\";")
+        self.pushButton_2.setObjectName("pushButton_2")
+        MainWindow.setCentralWidget(self.centralwidget)
+        self.menubar = QtWidgets.QMenuBar(MainWindow)
+        self.menubar.setGeometry(QtCore.QRect(0, 0, 1279, 31))
+        self.menubar.setObjectName("menubar")
+        self.menuImage_Processing = QtWidgets.QMenu(self.menubar)
+        self.menuImage_Processing.setObjectName("menuImage_Processing")
+        self.menuText_Processing = QtWidgets.QMenu(self.menubar)
+        self.menuText_Processing.setObjectName("menuText_Processing")
+        self.menuOptions = QtWidgets.QMenu(self.menubar)
+        self.menuOptions.setObjectName("menuOptions")
+        MainWindow.setMenuBar(self.menubar)
+        self.statusbar = QtWidgets.QStatusBar(MainWindow)
+        self.statusbar.setObjectName("statusbar")
+        MainWindow.setStatusBar(self.statusbar)
+        self.actionFace_Detect = QtWidgets.QAction(MainWindow)
+        self.actionFace_Detect.setObjectName("actionFace_Detect")
+        self.actionFace_Recognition = QtWidgets.QAction(MainWindow)
+        self.actionFace_Recognition.setObjectName("actionFace_Recognition")
+        self.actionText_Summarizer = QtWidgets.QAction(MainWindow)
+        self.actionText_Summarizer.setObjectName("actionText_Summarizer")
+        self.actionText_Classification = QtWidgets.QAction(MainWindow)
+        self.actionText_Classification.setObjectName("actionText_Classification")
+        self.actionDigits_Recognition = QtWidgets.QAction(MainWindow)
+        self.actionDigits_Recognition.setObjectName("actionDigits_Recognition")
+        self.actionOther_Objects_Detection = QtWidgets.QAction(MainWindow)
+        self.actionOther_Objects_Detection.setObjectName("actionOther_Objects_Detection")
+        self.actionHome = QtWidgets.QAction(MainWindow)
+        self.actionHome.setObjectName("actionHome")
+        self.actionExit = QtWidgets.QAction(MainWindow)
+        self.actionExit.setObjectName("actionExit")
+        self.menuImage_Processing.addAction(self.actionFace_Detect)
+        self.menuImage_Processing.addAction(self.actionFace_Recognition)
+        self.menuImage_Processing.addAction(self.actionDigits_Recognition)
+        self.menuImage_Processing.addAction(self.actionOther_Objects_Detection)
+        self.menuText_Processing.addAction(self.actionText_Summarizer)
+        self.menuText_Processing.addAction(self.actionText_Classification)
+        self.menuOptions.addAction(self.actionHome)
+        self.menuOptions.addAction(self.actionExit)
+        self.menubar.addAction(self.menuOptions.menuAction())
+        self.menubar.addAction(self.menuImage_Processing.menuAction())
+        self.menubar.addAction(self.menuText_Processing.menuAction())
+
+        self.frame.hide()
+
+        self.retranslateUi(MainWindow)
+        QtCore.QMetaObject.connectSlotsByName(MainWindow)
+
+    def retranslateUi(self, MainWindow):
+        _translate = QtCore.QCoreApplication.translate
+        MainWindow.setWindowTitle(_translate("MainWindow", "MainWindow"))
+        self.label.setText(_translate("MainWindow", "Welcome To Machine Learning Applications"))
+        self.pushButton.setText(_translate("MainWindow", "Choose Image"))
+        self.pushButton_2.setText(_translate("MainWindow", "Detect Faces"))
+        self.menuImage_Processing.setTitle(_translate("MainWindow", "Image Processing"))
+        self.menuText_Processing.setTitle(_translate("MainWindow", "Text Processing"))
+        self.menuOptions.setTitle(_translate("MainWindow", "Options"))
+        self.actionFace_Detect.setText(_translate("MainWindow", "Face Detect"))
+        self.actionFace_Recognition.setText(_translate("MainWindow", "Face Recognition"))
+        self.actionText_Summarizer.setText(_translate("MainWindow", "Text Summarizer"))
+        self.actionText_Classification.setText(_translate("MainWindow", "Text Classification"))
+        self.actionDigits_Recognition.setText(_translate("MainWindow", "Digits Recognition"))
+        self.actionOther_Objects_Detection.setText(_translate("MainWindow", "Other Objects Detection"))
+        self.actionHome.setText(_translate("MainWindow", "Home"))
+        self.actionExit.setText(_translate("MainWindow", "Exit"))
+
+        self.actionFace_Detect.triggered.connect(self.showFaceDetect)
+        self.pushButton.clicked.connect(self.chooseImage)
+        self.pushButton_2.clicked.connect(self.detectFace)
+
+    def showFaceDetect(self):
+        self.frame.show()
+
+    def chooseImage(self):
+        # print("Choose Image")
+        location = QtWidgets.QFileDialog.getOpenFileName(self,'Select File')
+        # loc = location[0]
+        fileUrl = QtCore.QUrl.fromLocalFile(location[0])
+        # print(fileUrl)
+        # self.image_1 = QtGui.QPixmap(fileUrl)
+        # self.label_2.setPixmap(self.image_1)
+
+    def detectFace(self):
+        pass
+
+
+if __name__ == "__main__":
+    import sys
+    app = QtWidgets.QApplication(sys.argv)
+    MainWindow = QtWidgets.QMainWindow()
+    ui = Ui_MainWindow()
+    ui.setupUi(MainWindow)
+    MainWindow.show()
+    sys.exit(app.exec_())
+
